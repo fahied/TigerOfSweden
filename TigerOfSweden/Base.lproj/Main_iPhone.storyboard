@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--Products View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ProductsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,8 +16,37 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="zir-KV-wI1">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="V6J-gi-YiS">
+                                <rect key="frame" x="0.0" y="66" width="320" height="502"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="2gy-fk-n9U"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="uQg-3D-7Xq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="V6J-gi-YiS" firstAttribute="leading" secondItem="zir-KV-wI1" secondAttribute="leading" id="37n-fk-xtu"/>
+                            <constraint firstItem="V6J-gi-YiS" firstAttribute="top" secondItem="zir-KV-wI1" secondAttribute="bottom" id="ORx-y3-l62"/>
+                            <constraint firstItem="V6J-gi-YiS" firstAttribute="trailing" secondItem="zir-KV-wI1" secondAttribute="trailing" id="U4j-97-EN2"/>
+                            <constraint firstItem="V6J-gi-YiS" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="fUY-95-xpf"/>
+                            <constraint firstItem="zir-KV-wI1" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="2" id="kR1-5y-TbB"/>
+                            <constraint firstAttribute="trailing" secondItem="V6J-gi-YiS" secondAttribute="trailing" id="o9E-WQ-egL"/>
+                            <constraint firstAttribute="bottom" secondItem="V6J-gi-YiS" secondAttribute="bottom" id="vcC-oW-hJU"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="zir-KV-wI1" id="gc4-0d-hlt"/>
+                        <outlet property="tableView" destination="V6J-gi-YiS" id="KY8-xT-f1H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
