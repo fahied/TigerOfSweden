@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DF4605D4-A178-4416-A256-A665ECEDAB63</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TigerOfSweden</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3ACD7435-48C5-4CA4-B8EE-9225BFDAD99D</key>
+		<string>https://github.com/fahied/TigerOfSweden.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TigerOfSweden.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3ACD7435-48C5-4CA4-B8EE-9225BFDAD99D</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/fahied/TigerOfSweden.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3ACD7435-48C5-4CA4-B8EE-9225BFDAD99D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3ACD7435-48C5-4CA4-B8EE-9225BFDAD99D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TigerOfSweden</string>
+		</dict>
+	</array>
+</dict>
+</plist>

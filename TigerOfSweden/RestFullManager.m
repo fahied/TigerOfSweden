@@ -7,6 +7,8 @@
 //
 
 #import "RestFullManager.h"
+#import "NetworkManager.h"
+
 
 @implementation RestFullManager
 
