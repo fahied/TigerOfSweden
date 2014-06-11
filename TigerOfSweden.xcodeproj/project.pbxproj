@@ -15,13 +15,13 @@
 		5B631DA71948ADA3005BCA44 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B631DA61948ADA3005BCA44 /* AppDelegate.m */; };
 		5B631DAA1948ADA3005BCA44 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B631DA81948ADA3005BCA44 /* Main_iPhone.storyboard */; };
 		5B631DAD1948ADA3005BCA44 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B631DAB1948ADA3005BCA44 /* Main_iPad.storyboard */; };
-		5B631DB01948ADA3005BCA44 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B631DAF1948ADA3005BCA44 /* ViewController.m */; };
 		5B631DB21948ADA3005BCA44 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B631DB11948ADA3005BCA44 /* Images.xcassets */; };
 		5B631DB91948ADA3005BCA44 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B631DB81948ADA3005BCA44 /* XCTest.framework */; };
 		5B631DBA1948ADA3005BCA44 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B631D961948ADA3005BCA44 /* Foundation.framework */; };
 		5B631DBB1948ADA3005BCA44 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B631D9A1948ADA3005BCA44 /* UIKit.framework */; };
 		5B631DC31948ADA3005BCA44 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B631DC11948ADA3005BCA44 /* InfoPlist.strings */; };
 		5B631DC51948ADA3005BCA44 /* TigerOfSwedenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B631DC41948ADA3005BCA44 /* TigerOfSwedenTests.m */; };
+		5B631DD61948B314005BCA44 /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B631DD51948B314005BCA44 /* ProductsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,14 +47,14 @@
 		5B631DA61948ADA3005BCA44 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5B631DA91948ADA3005BCA44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		5B631DAC1948ADA3005BCA44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		5B631DAE1948ADA3005BCA44 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5B631DAF1948ADA3005BCA44 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5B631DB11948ADA3005BCA44 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5B631DB71948ADA3005BCA44 /* TigerOfSwedenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TigerOfSwedenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B631DB81948ADA3005BCA44 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5B631DC01948ADA3005BCA44 /* TigerOfSwedenTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TigerOfSwedenTests-Info.plist"; sourceTree = "<group>"; };
 		5B631DC21948ADA3005BCA44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5B631DC41948ADA3005BCA44 /* TigerOfSwedenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TigerOfSwedenTests.m; sourceTree = "<group>"; };
+		5B631DD41948B314005BCA44 /* ProductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsViewController.h; sourceTree = "<group>"; };
+		5B631DD51948B314005BCA44 /* ProductsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +118,8 @@
 				5B631DA61948ADA3005BCA44 /* AppDelegate.m */,
 				5B631DA81948ADA3005BCA44 /* Main_iPhone.storyboard */,
 				5B631DAB1948ADA3005BCA44 /* Main_iPad.storyboard */,
-				5B631DAE1948ADA3005BCA44 /* ViewController.h */,
-				5B631DAF1948ADA3005BCA44 /* ViewController.m */,
+				5B631DD41948B314005BCA44 /* ProductsViewController.h */,
+				5B631DD51948B314005BCA44 /* ProductsViewController.m */,
 				5B631DB11948ADA3005BCA44 /* Images.xcassets */,
 				5B631D9D1948ADA3005BCA44 /* Supporting Files */,
 			);
@@ -253,8 +253,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B631DB01948ADA3005BCA44 /* ViewController.m in Sources */,
 				5B631DA71948ADA3005BCA44 /* AppDelegate.m in Sources */,
+				5B631DD61948B314005BCA44 /* ProductsViewController.m in Sources */,
 				5B631DA31948ADA3005BCA44 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +393,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TigerOfSweden/TigerOfSweden-Prefix.pch";
 				INFOPLIST_FILE = "TigerOfSweden/TigerOfSweden-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -406,6 +407,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TigerOfSweden/TigerOfSweden-Prefix.pch";
 				INFOPLIST_FILE = "TigerOfSweden/TigerOfSweden-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -470,6 +472,7 @@
 				5B631DCA1948ADA3005BCA44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5B631DCB1948ADA3005BCA44 /* Build configuration list for PBXNativeTarget "TigerOfSwedenTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +481,7 @@
 				5B631DCD1948ADA3005BCA44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
