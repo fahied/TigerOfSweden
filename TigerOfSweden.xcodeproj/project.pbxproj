@@ -26,6 +26,10 @@
 		5B631DE01948B7CC005BCA44 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B631DDF1948B7CC005BCA44 /* NetworkManager.m */; };
 		5BA1A6EF19499CC700A569ED /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1A6EE19499CC700A569ED /* ProductTableViewCell.m */; };
 		5BA1A6F119499D5400A569ED /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BA1A6F019499D5400A569ED /* QuartzCore.framework */; };
+		5BA1A6F31949A24000A569ED /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BA1A6F21949A24000A569ED /* Twitter.framework */; };
+		5BA1A6F51949A24700A569ED /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BA1A6F41949A24700A569ED /* MessageUI.framework */; };
+		5BA1A6F71949A78F00A569ED /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA1A6F61949A78F00A569ED /* placeholder.png */; };
+		5BA1A6FA1949AFA600A569ED /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1A6F91949AFA600A569ED /* WebViewController.m */; };
 		D27E5D4A18974DA7802FFB3F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A874A2F9F8294864B7495F1C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +73,11 @@
 		5BA1A6ED19499CC700A569ED /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
 		5BA1A6EE19499CC700A569ED /* ProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
 		5BA1A6F019499D5400A569ED /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5BA1A6F21949A24000A569ED /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		5BA1A6F41949A24700A569ED /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		5BA1A6F61949A78F00A569ED /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		5BA1A6F81949AFA600A569ED /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		5BA1A6F91949AFA600A569ED /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		A874A2F9F8294864B7495F1C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -77,6 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BA1A6F51949A24700A569ED /* MessageUI.framework in Frameworks */,
+				5BA1A6F31949A24000A569ED /* Twitter.framework in Frameworks */,
 				5BA1A6F119499D5400A569ED /* QuartzCore.framework in Frameworks */,
 				5B631D991948ADA3005BCA44 /* CoreGraphics.framework in Frameworks */,
 				5B631D9B1948ADA3005BCA44 /* UIKit.framework in Frameworks */,
@@ -121,6 +132,8 @@
 		5B631D951948ADA3005BCA44 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5BA1A6F41949A24700A569ED /* MessageUI.framework */,
+				5BA1A6F21949A24000A569ED /* Twitter.framework */,
 				5BA1A6F019499D5400A569ED /* QuartzCore.framework */,
 				5B631D961948ADA3005BCA44 /* Foundation.framework */,
 				5B631D981948ADA3005BCA44 /* CoreGraphics.framework */,
@@ -140,6 +153,8 @@
 				5B631DAB1948ADA3005BCA44 /* Main_iPad.storyboard */,
 				5B631DD41948B314005BCA44 /* ProductsViewController.h */,
 				5B631DD51948B314005BCA44 /* ProductsViewController.m */,
+				5BA1A6F81949AFA600A569ED /* WebViewController.h */,
+				5BA1A6F91949AFA600A569ED /* WebViewController.m */,
 				5BA1A6EC19499CA300A569ED /* custom table cell */,
 				5B631DB11948ADA3005BCA44 /* Images.xcassets */,
 				5B631DD71948B654005BCA44 /* util */,
@@ -151,6 +166,7 @@
 		5B631D9D1948ADA3005BCA44 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5BA1A6F61949A78F00A569ED /* placeholder.png */,
 				5B631D9E1948ADA3005BCA44 /* TigerOfSweden-Info.plist */,
 				5B631D9F1948ADA3005BCA44 /* InfoPlist.strings */,
 				5B631DA21948ADA3005BCA44 /* main.m */,
@@ -279,6 +295,7 @@
 				5B631DAD1948ADA3005BCA44 /* Main_iPad.storyboard in Resources */,
 				5B631DB21948ADA3005BCA44 /* Images.xcassets in Resources */,
 				5B631DAA1948ADA3005BCA44 /* Main_iPhone.storyboard in Resources */,
+				5BA1A6F71949A78F00A569ED /* placeholder.png in Resources */,
 				5B631DA11948ADA3005BCA44 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B631DA71948ADA3005BCA44 /* AppDelegate.m in Sources */,
+				5BA1A6FA1949AFA600A569ED /* WebViewController.m in Sources */,
 				5B631DDD1948B751005BCA44 /* RestFullManager.m in Sources */,
 				5B631DD61948B314005BCA44 /* ProductsViewController.m in Sources */,
 				5BA1A6EF19499CC700A569ED /* ProductTableViewCell.m in Sources */,
