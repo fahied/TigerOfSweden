@@ -21,15 +21,18 @@ PODS:
     - MagicalRecord/Core
   - MagicalRecord/Core (2.2)
   - Reachability (3.1.1)
+  - SVPullToRefresh (0.4.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0.2)
   - MagicalRecord (~> 2.2)
   - Reachability (~> 3.1.1)
+  - SVPullToRefresh
 
 SPEC CHECKSUMS:
   AFNetworking: a4d0e9a64de9242986620dafd1b3cee3b413ac5c
   MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
   Reachability: 8e9635e3cb4f98e7f825e51147f677ecc694d0e7
+  SVPullToRefresh: d5161ebc833a38b465364412e5e307ca80bbb190
 
 COCOAPODS: 0.33.1

@@ -11,7 +11,7 @@
 @interface RestFullManager : NSObject
 
 
-+(void)getJsonWhereRoute:(NSString*)route prams:(NSDictionary*)prams completion:(void (^)(BOOL success, id json))completion;
++(void)getJsonWhereRoute:(NSString*)route prams:(NSDictionary*)prams completion:(void (^)(NSError *error, id json))completion;
 
 
 @end

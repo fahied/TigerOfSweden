@@ -12,14 +12,14 @@
 
 @implementation RestFullManager
 
-+(void)getJsonWhereRoute:(NSString*)route prams:(NSDictionary*)prams completion:(void (^)(BOOL success, id json))completion
++(void)getJsonWhereRoute:(NSString*)route prams:(NSDictionary*)prams completion:(void (^)(NSError *error, id json))completion
 {
     NetworkManager *networkManger = [NetworkManager sharedManager];
     
     [networkManger GET:route parameters:prams success:^(NSURLSessionDataTask *task, id responseObject) {
-        completion(YES, responseObject);
+        completion(nil, responseObject);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        completion(NO, nil);
+        completion(error, nil);
     }];
 }
 
