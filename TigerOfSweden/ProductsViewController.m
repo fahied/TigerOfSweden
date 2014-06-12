@@ -6,12 +6,25 @@
 //  Copyright (c) 2014 Muhammad Fahied. All rights reserved.
 //
 
+#define SampleData @{@"id":@2, @"sku":@"randomString", @"productName":@"Polo shirt",@"brandName":@"dressman", @"image":@"http://cdn.varner.eu/Global/Dressmann/Collection/2014_spring_summer/7115627_950_3.jpg.transform?w=300&cp=true:",@"price":@300, @"procductPage":@"http://dressmann.com/no/Produkter/Collection/Dresser/Wool-stretch-grey-check_7115627_950/"}
+
+
+
 #import "ProductsViewController.h"
 #import "RestFullManager.h"
 #import <UIScrollView+SVPullToRefresh.h>
 #import <UIScrollView+SVInfiniteScrolling.h>
-#import <AFNetworking.h>
+#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/UIImageView+AFNetworking.h>
+
+#import "WebViewController.h"
+
+
 #import "AppConstants.h"
+#import "ProductTableViewCell.h"
+
+
+
 
 
 static int initialProductID = 1; // product ID to start from 1, depends on your api
@@ -24,6 +37,8 @@ static int productCount = 50; // product ID to start from 1, depends on your api
 // to keep the objects GET from server
 @property (nonatomic, strong) NSMutableArray *productList;
 
+@property (nonatomic, strong) NSMutableArray *filteredProductList;
+
 
 @end
 
@@ -35,6 +50,9 @@ static int productCount = 50; // product ID to start from 1, depends on your api
 	// Do any additional setup after loading the view, typically from a nib.
     
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    self.productList = [NSMutableArray new];
+    self.filteredProductList = [@[]mutableCopy];
+    self.searchBar.delegate = self;
     
     __weak typeof(self) weakSelf = self;
     // refresh new data when pull the table list
@@ -53,6 +71,11 @@ static int productCount = 50; // product ID to start from 1, depends on your api
     [self.tableView addInfiniteScrollingWithActionHandler:^{
         [weakSelf loadFromServer];
     }];
+    
+    //for testing
+    [self.productList addObject:SampleData];
+    _filteredProductList = [_productList mutableCopy];
+    [self.tableView reloadData];
 }
 
 
@@ -88,6 +111,8 @@ static int productCount = 50; // product ID to start from 1, depends on your api
         for (id obj in [json valueForKey:@"items"]) {
             [self.productList addObject:obj];
         }
+        self.filteredProductList = [self.productList mutableCopy];
+        
         [self reloadTableView:currentRow];
         
         // clear the pull to refresh & infinite scroll, this 2 lines very important
@@ -116,28 +141,44 @@ static int productCount = 50; // product ID to start from 1, depends on your api
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    id item = [_productList objectAtIndex:indexPath.row];
-    NSLog(@"Selected item %@", item);
+    [self performSegueWithIdentifier:@"showWebView" sender:self];
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Assume self.view is the table view
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
+    id item = [_filteredProductList objectAtIndex:indexPath.row];
+    
+    NSString *productPage = [item valueForKey:@"procductPage"];
+
+    [(WebViewController*)segue.destinationViewController setPageUrlString:productPage];
+}
+
+
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_productList count];
+    return [_filteredProductList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"MyListCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    static NSString *cellIdentifier = @"productCell";
+    ProductTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[ProductTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
     // minus 1 because the first row is the search bar
-    id item = [_productList objectAtIndex:indexPath.row];
+    id item = [_filteredProductList objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [item valueForKey:@"name"];
+    cell.productNameLabel.text = [item valueForKey:@"productName"];
+    
+    //set product image
+    [cell.largeImageView setImageWithURL:[NSURL URLWithString:[item valueForKey:@"image"]] placeholderImage:[UIImage imageNamed:@"placeholder"]];
     
     return cell;
 }
@@ -154,6 +195,32 @@ static int productCount = 50; // product ID to start from 1, depends on your api
 {
     return [AFNetworkReachabilityManager sharedManager].reachable;
 }
+
+
+// called when text changes (including clear)
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    // Update the filtered array based on the search text and scope.
+    
+    if ([searchText length] == 0) {
+        
+        _filteredProductList = [_productList mutableCopy];
+        // [self.tableview performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+        [self.tableView reloadData];
+        return;
+    }
+    else if([searchText length] > 0)
+    {
+        // Remove all objects from the filtered search array
+        [_filteredProductList removeAllObjects];
+        // Filter the array using NSPredicate
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(SELF.productName contains[c] %@) || (SELF.brandName contains[c] %@) ", searchText,searchText];
+        _filteredProductList = [[_productList filteredArrayUsingPredicate:predicate]mutableCopy];
+        
+        [self.tableView reloadData];
+    }
+}
+
 
 
 @end

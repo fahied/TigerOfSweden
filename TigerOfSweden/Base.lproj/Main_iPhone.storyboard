@@ -35,7 +35,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JYg-Px-Gcm">
-                                                    <rect key="frame" x="10" y="10" width="300" height="301"/>
+                                                    <rect key="frame" x="10" y="10" width="300" height="300"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pivot Polo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFp-ou-5wx">
@@ -66,6 +66,7 @@
                                             <outlet property="largeImageView" destination="JYg-Px-Gcm" id="8BH-a6-hBu"/>
                                             <outlet property="priceLabel" destination="jMy-Zm-PUN" id="kS2-Rd-IAp"/>
                                             <outlet property="productNameLabel" destination="GFp-ou-5wx" id="dvP-tl-iE6"/>
+                                            <segue destination="RCe-Wd-aPA" kind="modal" identifier="showWebView" id="YTI-cK-4xS"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -93,6 +94,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-13" y="284"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="lAG-TF-R7w">
+            <objects>
+                <viewController id="RCe-Wd-aPA" customClass="WebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9NN-pt-dyq"/>
+                        <viewControllerLayoutGuide type="bottom" id="wqI-JE-RpB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Iyk-Vh-WY6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pdH-PQ-ASn">
+                                <rect key="frame" x="0.0" y="68" width="320" height="500"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="pdH-PQ-ASn" id="121-Uo-p3U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b9G-H0-4xq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="737" y="279"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

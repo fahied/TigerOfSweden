@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProductsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface ProductsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate, UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
