@@ -37,7 +37,7 @@ You app should:
 Also: the opened webpage might send a message to the app by setting its location to:
 
 ```
-namshi://?message=<string>
+customURL://?message=<string>
 ```
 
 * catch that message and display it.
